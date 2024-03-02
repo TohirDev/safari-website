@@ -116,7 +116,7 @@ const aside_price = [
 
 function Aside({}) {
   return (
-    <div>
+    <div className="h-[1300px]">
       <Collapse title="CATEGORY">
         <nav>
           <ul>

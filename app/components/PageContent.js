@@ -45,7 +45,7 @@ const data = [
 
 function PageContent() {
   return (
-    <main className="grid grid-areas-slim md:grid-areas-wide md:grid-cols-layout md:grid-rows-layout h-[100vh]">
+    <main className="grid grid-areas-slim md:grid-areas-wide md:grid-cols-layout md:grid-rows-layout h-[100%]">
       <header className="grid-in-header flex justify-start items-center">
         <h1 className="font-muli text-[30px] text-black font-extrabold leading-[18px] tracking-[3px]">
           SHOES
