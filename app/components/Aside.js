@@ -187,7 +187,7 @@ function Aside({}) {
               <button
                 key={el.id}
                 type="button"
-                className="w-[75px] h-[35px] border border-color-[rgba(0,0,0,0.5)] transition duration-300 ease-in-out transform hover:shadow-lg"
+                className="w-[75px] h-[35px] border border-color-[rgba(0,0,0,0.5)] transition duration-300 ease-in-out transform hover:bg-[#ED165F]"
               >
                 {el.size}
               </button>
@@ -208,6 +208,7 @@ function Aside({}) {
                   type="color"
                   id="colorPicker"
                   name="colorPicker"
+                  disabled
                   defaultValue={el.color}
                   className="w-[32px] h-[32px] outline-none"
                 />
@@ -217,6 +218,12 @@ function Aside({}) {
                 >
                   {el.label}
                 </label>
+
+                {/* <div
+                  className={`w-[32px] h-[32px] outline-none bg-[${el.color}]`}
+                ></div>
+                <p>{el.label}</p>
+                */}
               </div>
             ))}
           </div>
