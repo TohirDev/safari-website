@@ -226,14 +226,17 @@ function Aside({}) {
       <Collapse title="PRICE">
         <form className="py-4">
           {aside_price.map((el) => (
-            <div key={el.id}>
+            <div key={el.id} className="flex items-center gap-2 my-4">
               <input
                 type="checkbox"
                 id="myCheckbox"
                 name="myCheckbox"
                 defaultChecked={el.isChecked}
+                className="w-[27px] h-[27px] cursor-pointer"
               />
-              <label htmlFor="myCheckbox">{el.label}</label>
+              <label htmlFor="myCheckbox" className="text-[14px] font-semibold">
+                {el.label}
+              </label>
             </div>
           ))}
           <button type="button" className="bg-[#ddd] my-4">
