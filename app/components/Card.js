@@ -18,9 +18,9 @@ function Card({ id, title, price, description, category, image, rating }) {
           ADD TO CART
         </button>
       </div>
-      <div className="w-[221px] text-center py-[35px]">
-        <p>{title}</p>
-        <p className="">₦ {price}</p>
+      <div className="w-[221px] text-center py-[35px] font-muli text-[20px] font-normal">
+        <p>{`${title.substring(0, 30)} ${title.length >= 30 ? "..." : ""}`}</p>
+        <p>₦ {price}</p>
       </div>
     </div>
   );

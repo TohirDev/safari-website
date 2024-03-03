@@ -9,7 +9,6 @@ module.exports = {
     extend: {
       fontFamily: {
         muli: "Muli",
-        secular: "Secular One",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
