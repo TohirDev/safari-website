@@ -12,6 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <link rel="stylesheet" href="https://use.typekit.net/ngv5iej.css"></link>
       <body
         className={inter.className}
         style={{
