@@ -1,7 +1,7 @@
 import PageContent from "../../../app/components/PageContent";
 import Container from "../../components/Container";
 
-function Clothes() {
+function Accessories() {
   return (
     <Container>
       <PageContent />
@@ -9,4 +9,4 @@ function Clothes() {
   );
 }
 
-export default Clothes;
+export default Accessories;
