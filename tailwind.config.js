@@ -22,7 +22,7 @@ module.exports = {
         slim: ["header", "aside", "main"],
       },
       gridTemplateColumns: {
-        layout: "24rem 1fr 2rem",
+        layout: "18rem 1fr 2rem",
       },
       gridTemplateRows: {
         layout: "6rem 3rem 1fr auto",
