@@ -1,3 +1,5 @@
+"use client";
+
 import Collapse from "./Collapse.js";
 
 const aside_nav = [
@@ -19,7 +21,51 @@ const aside_nav = [
 export const aside_size = [
   {
     id: 1,
-    xl: "15/2",
+    size: "15/2",
+  },
+  {
+    id: 2,
+    size: "15/2",
+  },
+  {
+    id: 3,
+    size: "15/2",
+  },
+  {
+    id: 4,
+    size: "15/2",
+  },
+  {
+    id: 5,
+    size: "15/2",
+  },
+  {
+    id: 6,
+    size: "15/2",
+  },
+  {
+    id: 7,
+    size: "15/2",
+  },
+  {
+    id: 8,
+    size: "15/2",
+  },
+  {
+    id: 9,
+    size: "15/2",
+  },
+  {
+    id: 10,
+    size: "15/2",
+  },
+  {
+    id: 11,
+    size: "15/2",
+  },
+  {
+    id: 12,
+    size: "15/2",
   },
 ];
 
@@ -118,11 +164,16 @@ function Aside({}) {
   return (
     <div className="h-[1300px]">
       <Collapse title="CATEGORY">
-        <nav>
+        <nav className="py-4">
           <ul>
             {aside_nav.map((el, i) => (
               <li key={i}>
-                <a href="#">{el}</a>
+                <a
+                  href="#"
+                  className="font-muli text-[16px] font-semibold text-[#ED165F]"
+                >
+                  {el}
+                </a>
               </li>
             ))}
           </ul>
@@ -131,51 +182,41 @@ function Aside({}) {
 
       <Collapse title="SIZE">
         <form>
-          <div className="flex gap-[5px]">
-            <button
-              type="button"
-              className="w-[fit-content] h-[fit-content] bg-[#ddd] p-1"
-            >
-              35.5/5
-            </button>
-
-            <button
-              type="button"
-              className="w-[fit-content] h-[fit-content] bg-[#ddd] p-1"
-            >
-              35.5/5
-            </button>
-
-            <button
-              type="button"
-              className="w-[fit-content] h-[fit-content] bg-[#ddd] p-1"
-            >
-              35.5/5
-            </button>
-
-            <button
-              type="button"
-              className="w-[fit-content] h-[fit-content] bg-[#ddd] p-1"
-            >
-              35.5/5
-            </button>
+          <div className="py-4  grid grid-cols-3 grid-rows-4 gap-y-3 gap-x-1">
+            {aside_size.map((el) => (
+              <button
+                key={el.id}
+                type="button"
+                className="w-[75px] h-[35px] border border-color-[rgba(0,0,0,0.5)] transition duration-300 ease-in-out transform hover:shadow-lg"
+              >
+                {el.size}
+              </button>
+            ))}
           </div>
         </form>
       </Collapse>
 
       <Collapse title="COLOR">
         <form>
-          <div className="grid grid-cols-3 grid-rows-4 py-4">
+          <div className="grid grid-cols-3 grid-rows-4 py-4 gap-2">
             {aside_colors.map((el) => (
-              <div key={el.id}>
+              <div
+                key={el.id}
+                className="flex items-center gap-2 cursor-pointer"
+              >
                 <input
                   type="color"
                   id="colorPicker"
                   name="colorPicker"
                   defaultValue={el.color}
-                  className="w-[32px] h-[32px]"
+                  className="w-[32px] h-[32px] outline-none"
                 />
-                <label htmlFor="colorPicker">{el.label}</label>
+                <label
+                  htmlFor="colorPicker"
+                  className="cursor-pointer font-muli text-[14px] font-normal text-[#000]"
+                >
+                  {el.label}
+                </label>
               </div>
             ))}
           </div>
@@ -183,19 +224,22 @@ function Aside({}) {
       </Collapse>
 
       <Collapse title="PRICE">
-        <form>
+        <form className="py-4">
           {aside_price.map((el) => (
-            <div key={el.id}>
+            <div key={el.id} className="flex items-center gap-2 my-4">
               <input
                 type="checkbox"
                 id="myCheckbox"
                 name="myCheckbox"
                 defaultChecked={el.isChecked}
+                className="w-[27px] h-[27px] cursor-pointer"
               />
-              <label htmlFor="myCheckbox">{el.label}</label>
+              <label htmlFor="myCheckbox" className="text-[14px] font-semibold">
+                {el.label}
+              </label>
             </div>
           ))}
-          <button type="button" className="bg-[#ddd]">
+          <button type="button" className="bg-[#ddd] my-4">
             Apply
           </button>
         </form>
