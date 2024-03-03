@@ -2,13 +2,22 @@
 import Aside from "./Aside";
 import Products from "./Products";
 import useFetch from "../../app/hooks/useFetch";
+import { usePathname } from "next/navigation";
 
 function PageContent() {
-  const { data, loading, error } = useFetch(
-    "https://fakestoreapi.com/products"
+  const pathName = usePathname();
+  const sliced = pathName.slice(6 + 0);
+  const { data } = useFetch(
+    `https://fakestoreapi.com/products/category/${
+      sliced === "/shoes"
+        ? "women's clothing"
+        : sliced === "/clothes"
+        ? "men's clothing"
+        : sliced === "/accessories"
+        ? "jewelery"
+        : "products"
+    }`
   );
-
-  console.log(data, loading, error);
 
   return (
     <main className="grid grid-areas-slim md:grid-areas-wide md:grid-cols-layout md:grid-rows-layout h-[100%]">
