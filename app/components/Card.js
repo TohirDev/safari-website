@@ -4,12 +4,13 @@ function Card({ id, title, price, description, category, image, rating }) {
   console.log(id, description, category, rating);
   return (
     <div className="text-black flex flex-col justify-center items-center bg-white transition duration-300 ease-in-out transform hover:shadow-lg">
-      <div className="w-[150px] min-h-[250px] text-center relative">
+      <div className="w-[150px] min-h-[250px] grid place-items-center relative">
         <Image
           src={image}
           alt="Description of the image"
           width={500}
           height={300}
+          priority
         />
       </div>
       <div className="absolute top-[50px] left-[50px] flex-col z-10 gap-[13px] hidden">
