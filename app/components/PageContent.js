@@ -1,13 +1,13 @@
 "use client";
+import { usePathname } from "next/navigation";
+import useFetch from "../../app/hooks/useFetch";
 import Aside from "./Aside";
 import Products from "./Products";
-import useFetch from "../../app/hooks/useFetch";
-import { usePathname } from "next/navigation";
 
 function PageContent() {
   const pathName = usePathname();
   const sliced = pathName.slice(6 + 0);
-  const { data } = useFetch(
+  const { data, loading } = useFetch(
     `https://fakestoreapi.com/products/category/${
       sliced === "/shoes"
         ? "women's clothing"
@@ -30,52 +30,10 @@ function PageContent() {
         <Aside />
       </aside>
       <section className="grid-in-main">
-        <Products data={data || undefined} />
+        {loading ? <h1>Loading...</h1> : <Products data={data || undefined} />}
       </section>
     </main>
   );
 }
 
 export default PageContent;
-
-// const data = [
-//   {
-//     id: 1,
-//     title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-//     price: 109.95,
-//     description:
-//       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-//     category: "men's clothing",
-//     image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-//     rating: {
-//       rate: 3.9,
-//       count: 120,
-//     },
-//   },
-//   {
-//     id: 2,
-//     title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-//     price: 109.95,
-//     description:
-//       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-//     category: "men's clothing",
-//     image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-//     rating: {
-//       rate: 3.9,
-//       count: 120,
-//     },
-//   },
-//   {
-//     id: 3,
-//     title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-//     price: 109.95,
-//     description:
-//       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-//     category: "men's clothing",
-//     image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-//     rating: {
-//       rate: 3.9,
-//       count: 120,
-//     },
-//   },
-// ];

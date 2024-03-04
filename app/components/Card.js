@@ -22,6 +22,8 @@ function Card({ id, title, price, description, category, image, rating }) {
       <div className="w-[221px] text-center py-[35px] font-muli text-[20px] font-normal">
         <p>{`${title.substring(0, 30)} ${title.length >= 30 ? "..." : ""}`}</p>
         <p>₦ {price}</p>
+        <p>{`Rating Rate: ${rating.rate}`}</p>
+        <p>{`Rating Count: ${rating.count}`}</p>
       </div>
     </div>
   );
